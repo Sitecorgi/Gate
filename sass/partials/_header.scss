@@ -1,0 +1,54 @@
+/// <reference path="variables" />
+header {
+    background: $white;
+    width: 100%;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-family: "Oswald regular";
+    color: $logo-blue;
+
+    .logo-link {
+        margin: 20px auto;
+    }
+
+    nav.header-nav {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+
+        .primary-nav {
+            font-size: 18px;
+            padding: 0;
+        }
+
+        .secondary-nav {
+            font-size: 15px;
+            padding: 0;
+        }
+        ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: start;
+            list-style: none;
+            margin: 5px 0;
+
+           li {
+                text-decoration: none;
+                margin: 5px 50px 5px 0;
+                text-decoration-color: $logo-turquoise;
+
+                &:hover{
+                        background: rgba(255,255,255,1);
+                        background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(68,255,209,1) 51%, rgba(68,255,209,1) 71%, rgba(68,255,209,1) 100%);
+                        background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(51%, rgba(68,255,209,1)), color-stop(71%, rgba(68,255,209,1)), color-stop(100%, rgba(68,255,209,1)));
+                        background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(68,255,209,1) 51%, rgba(68,255,209,1) 71%, rgba(68,255,209,1) 100%);
+                        background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(68,255,209,1) 51%, rgba(68,255,209,1) 71%, rgba(68,255,209,1) 100%);
+                        background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(68,255,209,1) 51%, rgba(68,255,209,1) 71%, rgba(68,255,209,1) 100%);
+                        background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(68,255,209,1) 51%, rgba(68,255,209,1) 71%, rgba(68,255,209,1) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#44ffd1', GradientType=0 );
+                }
+           }
+        }
+    }
+}

@@ -1,0 +1,85 @@
+body {
+  background: #ff7fb0;
+}
+
+header {
+  background: #ffffff;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-family: "Oswald regular";
+  color: #1454ec;
+}
+
+header .logo-link {
+  margin: 20px auto;
+}
+
+header nav.header-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: auto;
+}
+
+header nav.header-nav .primary-nav {
+  font-size: 18px;
+  padding: 0;
+}
+
+header nav.header-nav .secondary-nav {
+  font-size: 15px;
+  padding: 0;
+}
+
+header nav.header-nav ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  list-style: none;
+  margin: 5px 0;
+}
+
+header nav.header-nav ul li {
+  text-decoration: none;
+  margin: 5px 50px 5px 0;
+  -webkit-text-decoration-color: #44ffd1;
+          text-decoration-color: #44ffd1;
+}
+
+header nav.header-nav ul li:hover {
+  background: white;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(50%, white), color-stop(51%, #44ffd1), color-stop(71%, #44ffd1), color-stop(100%, #44ffd1));
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(50%, white), color-stop(51%, #44ffd1), color-stop(71%, #44ffd1), to(#44ffd1));
+  background: linear-gradient(to bottom, white 0%, white 50%, #44ffd1 51%, #44ffd1 71%, #44ffd1 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#44ffd1', GradientType=0 );
+}
+
+.btn.btn-book {
+  margin: auto;
+  font-size: 26px;
+  font-family: "Anton Regular";
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #44ffd1;
+  padding: 10px 20px;
+}
