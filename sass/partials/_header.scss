@@ -1,4 +1,6 @@
 /// <reference path="variables" />
+/// <reference path="mixins" />
+
 header {
     background: $white;
     width: 100%;
@@ -9,36 +11,88 @@ header {
     color: $logo-blue;
 
     .logo-link {
-        margin: 20px auto;
+        @include respond-to(widescreen){margin: 25px auto 25px 56px; }
+        @include respond-to(laptop) {
+            margin: 25px auto 25px 25px; 
+        }
+        margin: 25px auto 25px 12px;
+
+        img{
+            @include respond-to(laptop){
+                max-width: 150px;
+            }
+            max-width: 100px;
+        }
+    }
+
+    a.icon {
+        width: 20%;
+        color: $background-red;
+        font-size: 26px;
+        margin: auto 5px auto auto; 
+
+        @include respond-to(tablet) { margin: auto 5px auto auto;}
+        @include respond-to(laptop) { margin: auto 15px auto auto; }
+        @include respond-to(widescreen) { margin: auto 30px auto auto;}
+
+    }
+
+    .header-right {
+        @include respond-to(widescreen) { margin: auto 56px auto auto;}
+        @include respond-to(laptop) { margin: auto 25px auto auto; }
+
+        margin: auto 12px auto auto;
+
+        .mobile-nav {
+            margin: auto 5px auto auto; 
+
+            @include respond-to(tablet) { margin: auto 5px auto auto; display: none;}
+            @include respond-to(laptop) { margin: auto 15px auto auto; }
+            @include respond-to(widescreen) { margin: auto 30px auto auto;}
+        }
     }
 
     nav.header-nav {
         display: flex;
         flex-direction: column;
-        margin: auto;
+        margin: auto auto 50px;
+
+        @include respond-to(tablet) {
+            position: static;
+        }
+
+        position: absolute;
+        top: 0;
+        left: -800px;
 
         .primary-nav {
-            font-size: 18px;
+            font-size: 16px;
             padding: 0;
+            @include respond-to(laptop) { font-size: 18px;}
         }
 
         .secondary-nav {
-            font-size: 15px;
+            font-size: 14px;
             padding: 0;
+            @include respond-to(laptop) { font-size: 15px;}
+
         }
+
         ul {
             display: flex;
             flex-direction: row;
             justify-content: start;
             list-style: none;
-            margin: 5px 0;
+            margin: 0;
 
            li {
                 text-decoration: none;
-                margin: 5px 50px 5px 0;
+                @include respond-to (widescreen) {margin: 5px 50px 5px 0; }
+                @include respond-to (laptop) {margin: 5px 25px 5px 0;}
+                margin: 5px 5px 5px 0;
                 text-decoration-color: $logo-turquoise;
 
-                &:hover{
+                &:hover, &:active {
                         background: rgba(255,255,255,1);
                         background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 50%, rgba(68,255,209,1) 51%, rgba(68,255,209,1) 71%, rgba(68,255,209,1) 100%);
                         background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(50%, rgba(255,255,255,1)), color-stop(51%, rgba(68,255,209,1)), color-stop(71%, rgba(68,255,209,1)), color-stop(100%, rgba(68,255,209,1)));

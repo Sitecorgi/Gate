@@ -1,9 +1,18 @@
+/// <reference path="mixins" />
 .btn.btn-book {
-    margin:auto;
-    font-size: 26px;
     font-family: "Anton Regular";
     text-transform: uppercase;
     text-decoration: none;
     background-color: $logo-turquoise;
-    padding: 10px 20px;
+    display: none;
+    padding: 14px 14px;
+    white-space: nowrap;
+    font-size: 26px;
+    
+    @include respond-to(tablet) {padding: 14px 8px; display: inline; }
+    @include respond-to(laptop) {padding: 14px 36px;  }
+}
+
+.btn-header {
+    width: 60%;
 }

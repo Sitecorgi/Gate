@@ -20,7 +20,93 @@ header {
 }
 
 header .logo-link {
-  margin: 20px auto;
+  margin: 25px auto 25px 12px;
+}
+
+@media only screen and (min-width: 1332px) {
+  header .logo-link {
+    margin: 25px auto 25px 56px;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header .logo-link {
+    margin: 25px auto 25px 25px;
+  }
+}
+
+header .logo-link img {
+  max-width: 100px;
+}
+
+@media only screen and (min-width: 1024px) {
+  header .logo-link img {
+    max-width: 150px;
+  }
+}
+
+header a.icon {
+  width: 20%;
+  color: #f34b3d;
+  font-size: 26px;
+  margin: auto 5px auto auto;
+}
+
+@media only screen and (min-width: 768px) {
+  header a.icon {
+    margin: auto 5px auto auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header a.icon {
+    margin: auto 15px auto auto;
+  }
+}
+
+@media only screen and (min-width: 1332px) {
+  header a.icon {
+    margin: auto 30px auto auto;
+  }
+}
+
+header .header-right {
+  margin: auto 12px auto auto;
+}
+
+@media only screen and (min-width: 1332px) {
+  header .header-right {
+    margin: auto 56px auto auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header .header-right {
+    margin: auto 25px auto auto;
+  }
+}
+
+header .header-right .mobile-nav {
+  margin: auto 5px auto auto;
+}
+
+@media only screen and (min-width: 768px) {
+  header .header-right .mobile-nav {
+    margin: auto 5px auto auto;
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header .header-right .mobile-nav {
+    margin: auto 15px auto auto;
+  }
+}
+
+@media only screen and (min-width: 1332px) {
+  header .header-right .mobile-nav {
+    margin: auto 30px auto auto;
+  }
 }
 
 header nav.header-nav {
@@ -31,17 +117,38 @@ header nav.header-nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto;
+  margin: auto auto 50px;
+  position: absolute;
+  top: 0;
+  left: -800px;
+}
+
+@media only screen and (min-width: 768px) {
+  header nav.header-nav {
+    position: static;
+  }
 }
 
 header nav.header-nav .primary-nav {
-  font-size: 18px;
+  font-size: 16px;
   padding: 0;
 }
 
+@media only screen and (min-width: 1024px) {
+  header nav.header-nav .primary-nav {
+    font-size: 18px;
+  }
+}
+
 header nav.header-nav .secondary-nav {
-  font-size: 15px;
+  font-size: 14px;
   padding: 0;
+}
+
+@media only screen and (min-width: 1024px) {
+  header nav.header-nav .secondary-nav {
+    font-size: 15px;
+  }
 }
 
 header nav.header-nav ul {
@@ -56,17 +163,29 @@ header nav.header-nav ul {
       -ms-flex-pack: start;
           justify-content: start;
   list-style: none;
-  margin: 5px 0;
+  margin: 0;
 }
 
 header nav.header-nav ul li {
   text-decoration: none;
-  margin: 5px 50px 5px 0;
+  margin: 5px 5px 5px 0;
   -webkit-text-decoration-color: #44ffd1;
           text-decoration-color: #44ffd1;
 }
 
-header nav.header-nav ul li:hover {
+@media only screen and (min-width: 1332px) {
+  header nav.header-nav ul li {
+    margin: 5px 50px 5px 0;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  header nav.header-nav ul li {
+    margin: 5px 25px 5px 0;
+  }
+}
+
+header nav.header-nav ul li:hover, header nav.header-nav ul li:active {
   background: white;
   background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(50%, white), color-stop(51%, #44ffd1), color-stop(71%, #44ffd1), color-stop(100%, #44ffd1));
   background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(50%, white), color-stop(51%, #44ffd1), color-stop(71%, #44ffd1), to(#44ffd1));
@@ -75,11 +194,29 @@ header nav.header-nav ul li:hover {
 }
 
 .btn.btn-book {
-  margin: auto;
-  font-size: 26px;
   font-family: "Anton Regular";
   text-transform: uppercase;
   text-decoration: none;
   background-color: #44ffd1;
-  padding: 10px 20px;
+  display: none;
+  padding: 14px 14px;
+  white-space: nowrap;
+  font-size: 26px;
+}
+
+@media only screen and (min-width: 768px) {
+  .btn.btn-book {
+    padding: 14px 8px;
+    display: inline;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .btn.btn-book {
+    padding: 14px 36px;
+  }
+}
+
+.btn-header {
+  width: 60%;
 }

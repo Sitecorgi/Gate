@@ -4,7 +4,9 @@ var gulp = require('gulp'),
     runSequence = require('run-sequence'),
     notify = require('gulp-notify'),
     plumber = require('gulp-plumber'),
-    rename = require('gulp-rename');
+    rename = require('gulp-rename'),
+    minify = require('gulp-clean-css'),
+    sourcemaps = require('gulp-sourcemaps');
 
     var displayError = function(error) {
         // Initial building up of the error
@@ -47,8 +49,17 @@ var gulp = require('gulp'),
           .pipe(sass(sassOptions))
           .pipe(prefix(prefixerOptions))
           .pipe(rename('main.css'))
-          .pipe(gulp.dest('css'))
           .pipe(gulp.dest('styles'))
+      });
+
+      gulp.task('min', function(){
+        return gulp.src('styles/main.css')
+            .pipe(plumber({errorHandler: onError}))
+            .pipe(sourcemaps.init())
+            .pipe(minify())
+            .pipe(sourcemaps.write())
+            .pipe(rename('main.min.css'))
+            .pipe(gulp.dest('styles'));
       });
 
       gulp.task('watch', function() {
@@ -61,4 +72,8 @@ var gulp = require('gulp'),
 
       gulp.task('build', function(done) {
         runSequence('styles', done);
+      });
+
+      gulp.task('production-build', function(done){
+        runSequence('styles', 'min', done)
       });
