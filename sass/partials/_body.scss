@@ -1,5 +1,9 @@
 /// <reference path="variables" />
+html {
+    height: 100%;
+}
 
 body {
     background: $background-pink;
+    height:100%;
 }

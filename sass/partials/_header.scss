@@ -1,7 +1,9 @@
 /// <reference path="variables" />
 /// <reference path="mixins" />
-
-header {
+header{
+    height: 100%;
+}
+.global-header {
     background: $white;
     width: 100%;
     display:flex;
@@ -11,11 +13,11 @@ header {
     color: $logo-blue;
 
     .logo-link {
+
+        margin: 5px 10px;
+        @include respond-to(tablet) {margin:  10px auto;}
+        @include respond-to(laptop) {margin: 25px auto; }
         @include respond-to(widescreen){margin: 25px auto 25px 56px; }
-        @include respond-to(laptop) {
-            margin: 25px auto 25px 25px; 
-        }
-        margin: 25px auto 25px 12px;
 
         img{
             @include respond-to(laptop){
@@ -28,34 +30,31 @@ header {
     a.icon {
         width: 20%;
         color: $background-red;
-        font-size: 26px;
-        margin: auto 5px auto auto; 
+        font-size: 36px;
+        margin: auto 4px; 
+        text-decoration: none;
 
-        @include respond-to(tablet) { margin: auto 5px auto auto;}
+        @include respond-to(tablet) { margin: auto 5px auto auto; font-size: 26px;}
         @include respond-to(laptop) { margin: auto 15px auto auto; }
         @include respond-to(widescreen) { margin: auto 30px auto auto;}
 
     }
 
     .header-right {
+        @include respond-to(tablet) {margin: auto;}
         @include respond-to(widescreen) { margin: auto 56px auto auto;}
-        @include respond-to(laptop) { margin: auto 25px auto auto; }
 
         margin: auto 12px auto auto;
 
         .mobile-nav {
-            margin: auto 5px auto auto; 
-
             @include respond-to(tablet) { margin: auto 5px auto auto; display: none;}
-            @include respond-to(laptop) { margin: auto 15px auto auto; }
-            @include respond-to(widescreen) { margin: auto 30px auto auto;}
         }
     }
 
     nav.header-nav {
         display: flex;
         flex-direction: column;
-        margin: auto auto 50px;
+        margin: auto;
 
         @include respond-to(tablet) {
             position: static;
@@ -75,7 +74,6 @@ header {
             font-size: 14px;
             padding: 0;
             @include respond-to(laptop) { font-size: 15px;}
-
         }
 
         ul {
@@ -105,4 +103,81 @@ header {
            }
         }
     }
+}
+
+.mobile-header {
+    height: 100%;
+    
+    nav.mobile.header-nav {
+        position: absolute;
+        top:0;
+        left: -800px;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        background-color: $white;
+        opacity: 0.9;
+        height: 100%;
+        
+        a.btn.btn-book {
+            display: inherit;
+            margin: 10px auto;
+            width: 94%;
+            padding: 14px 0;
+            text-align: center;
+        }
+        @include respond-to(tablet){display: none;}
+    
+        &.show{
+            position: static;
+                    
+            ul{
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                list-style: none;
+                width: 100%;
+                color: $logo-blue;
+                list-style-position: inside;
+                font-family: "Oswald regular";
+                align-items: center;
+    
+                li {
+                    text-align: center;
+                    width: 94%;       
+                }
+                &.primary-nav {
+                    margin: 40px 0 0 0;
+                    font-size: 26px;
+    
+                        li {
+                            background: rgba(255,255,255,1);
+                            background: -moz-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 61%, rgba(68,255,209,1) 62%, rgba(68,255,209,1) 78%, rgba(68,255,209,1) 79%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%);
+                            background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(61%, rgba(255,255,255,1)), color-stop(62%, rgba(68,255,209,1)), color-stop(78%, rgba(68,255,209,1)), color-stop(79%, rgba(68,255,209,1)), color-stop(80%, rgba(255,255,255,1)), color-stop(100%, rgba(255,255,255,1)));
+                            background: -webkit-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 61%, rgba(68,255,209,1) 62%, rgba(68,255,209,1) 78%, rgba(68,255,209,1) 79%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%);
+                            background: -o-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 61%, rgba(68,255,209,1) 62%, rgba(68,255,209,1) 78%, rgba(68,255,209,1) 79%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%);
+                            background: -ms-linear-gradient(top, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 61%, rgba(68,255,209,1) 62%, rgba(68,255,209,1) 78%, rgba(68,255,209,1) 79%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%);
+                            background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,1) 61%, rgba(68,255,209,1) 62%, rgba(68,255,209,1) 78%, rgba(68,255,209,1) 79%, rgba(255,255,255,1) 80%, rgba(255,255,255,1) 100%);
+                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+    
+                            margin: 10px auto;
+                        &:nth-child(1){
+                            background: $white;
+                        }
+                    }
+                }
+    
+                &.secondary-nav {
+                    font-size: 21px;
+    
+                    li {
+                        background: $white;
+                        margin: 0;
+                    }
+                }                   
+            }
+        }
+    }
+    
 }

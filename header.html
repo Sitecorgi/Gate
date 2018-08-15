@@ -2,56 +2,130 @@
 <html>
 <head>
     <title>Gate Theatre Header</title>
-    <meta name="viewport" content="width=device-width">
+
+    <meta
+        name="viewport"
+        content="width=device-width"
+    ></meta>
+
     <link
         rel="stylesheet"
         href="styles/main.css"
     ></link>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+
+    <link
+        rel="stylesheet"
+        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+        integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+        crossorigin="anonymous"
+    ></link>
 </head>
 
 <body>
     <header>
-        <a href="#" class="logo-link">
-            <img
-                src="img/header.png"
-                class="logo"
-                alt="Gate Theatre"
+        <div class="global-header">
+            <a
+                href="#"
+                class="logo-link"
             >
-        </a>
+                <img
+                    src="img/header.png"
+                    class="logo"
+                    alt="Gate Theatre"
+                >
+            </a>
 
-        <nav class="header-nav">
-            <ul class="primary-nav">
-                <li>What's On</li>
+            <nav class="header-nav">
+                <ul class="primary-nav">
+                    <li>What's On</li>
 
-                <li>About Us</li>
+                    <li>About Us</li>
 
-                <li>Artists</li>
+                    <li>Artists</li>
 
-                <li>Get Involved</li>
+                    <li>Get Involved</li>
 
-                <li>Support Us</li>
+                    <li>Support Us</li>
 
-                <li>Visit Us</li>
-            </ul>
+                    <li>Visit Us</li>
+                </ul>
 
-            <ul class="secondary-nav">
-                <li>Harambee</li>
+                <ul class="secondary-nav">
+                    <li>Harambee</li>
 
-                <li>The Human Voice</li>
+                    <li>The Human Voice</li>
 
-                <li>A Small Race</li>
+                    <li>A Small Race</li>
 
-                <li>Dear Elizabeth</li>
+                    <li>Dear Elizabeth</li>
 
-                <li>The Ridiculous Darkness</li>
-            </ul>
-        </nav>
-        <div class="header-right">
-            <a href="#" class="icon"><i class="fa fa-user"></i></a>
-            <a href="#" class="icon"><i class="fa fa-shopping-cart"></i></a>
-            <a href="#" class="mobile-nav"><i class="fa fa-bars"></i></a>
-            <a href="#" title="Book Now" class="btn btn-book btn-header">BOOK NOW</a>
+                    <li>The Ridiculous Darkness</li>
+                </ul>
+            </nav>
+
+            <div class="header-right">
+                <a
+                    href="#"
+                    class="icon"
+                >
+                    <i class="fa fa-user"></i>
+                </a>
+
+                <a
+                    href="#"
+                    class="icon"
+                >
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+
+                <button class="hamburger hamburger--elastic mobile-nav" type="button">
+                        <span class="hamburger-box">
+                          <span class="hamburger-inner"></span>
+                        </span>
+                      </button>
+
+                <a
+                    href="#"
+                    title="Book Now"
+                    class="btn btn-book btn-header"
+                >BOOK NOW</a>
+            </div>
+        </div>
+
+        <div class="mobile-header">
+            <nav class="mobile header-nav">
+                <ul class="primary-nav">
+                    <li>What's On</li>
+                        <ul class="secondary-nav">
+                            <li>Harambee</li>
+
+                            <li>The Human Voice</li>
+
+                            <li>A Small Race</li>
+
+                            <li>Dear Elizabeth</li>
+
+                            <li>The Ridiculous Darkness</li>
+                        </ul>               
+                    <li>About Us</li>
+
+                    <li>Artists</li>
+
+                    <li>Get Involved</li>
+
+                    <li>Support Us</li>
+
+                    <li>Visit Us</li>
+                </ul>
+
+                <div>
+                        <a
+                        href="#"
+                        title="Book Now"
+                        class="btn btn-book btn-header"
+                    >BOOK NOW</a>
+                </div>
+            </nav>         
         </div>
     </header>
 </body>

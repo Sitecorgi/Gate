@@ -1,0 +1,19 @@
+/// <reference path="variables" />
+$hamburger-padding-x                       : 15px !default;
+$hamburger-padding-y                       : 15px !default;
+$hamburger-layer-width                     : 40px !default;
+$hamburger-layer-height                    : 5px !default;
+$hamburger-layer-spacing                   : 8px !default;
+$hamburger-layer-color                     : $logo-blue;
+$hamburger-layer-border-radius             : 0;
+$hamburger-hover-opacity                   : 0.7 !default;
+$hamburger-hover-transition-duration       : 0.15s !default;
+$hamburger-hover-transition-timing-function: linear !default;
+
+$hamburger-hover-use-filter: false !default;
+$hamburger-hover-filter    : opacity(50%) !default;
+
+$hamburger-types: (  elastic) !default;
+
+@import "node_modules/hamburgers/_sass/hamburgers/_base.scss";
+@import "node_modules/hamburgers/_sass/hamburgers/types/_elastic.scss";

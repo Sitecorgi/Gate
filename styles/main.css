@@ -1,8 +1,129 @@
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition-property: opacity, -webkit-filter;
+  transition-property: opacity, -webkit-filter;
+  transition-property: opacity, filter;
+  transition-property: opacity, filter, -webkit-filter;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: linear;
+          transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible;
+}
+
+.hamburger:hover {
+  opacity: 0.7;
+}
+
+.hamburger-box {
+  width: 40px;
+  height: 31px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2.5px;
+}
+
+.hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+  width: 40px;
+  height: 5px;
+  background-color: #1454ec;
+  border-radius: 0;
+  position: absolute;
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.15s;
+          transition-duration: 0.15s;
+  -webkit-transition-timing-function: ease;
+          transition-timing-function: ease;
+}
+
+.hamburger-inner::before, .hamburger-inner::after {
+  content: "";
+  display: block;
+}
+
+.hamburger-inner::before {
+  top: -13px;
+}
+
+.hamburger-inner::after {
+  bottom: -13px;
+}
+
+/*
+   * Elastic
+   */
+.hamburger--elastic .hamburger-inner {
+  top: 2.5px;
+  -webkit-transition-duration: 0.275s;
+          transition-duration: 0.275s;
+  -webkit-transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+          transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic .hamburger-inner::before {
+  top: 13px;
+  -webkit-transition: opacity 0.125s 0.275s ease;
+  transition: opacity 0.125s 0.275s ease;
+}
+
+.hamburger--elastic .hamburger-inner::after {
+  top: 26px;
+  -webkit-transition: -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55), -webkit-transform 0.275s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.hamburger--elastic.is-active .hamburger-inner {
+  -webkit-transform: translate3d(0, 13px, 0) rotate(135deg);
+          transform: translate3d(0, 13px, 0) rotate(135deg);
+  -webkit-transition-delay: 0.075s;
+          transition-delay: 0.075s;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::before {
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  opacity: 0;
+}
+
+.hamburger--elastic.is-active .hamburger-inner::after {
+  -webkit-transform: translate3d(0, -26px, 0) rotate(-270deg);
+          transform: translate3d(0, -26px, 0) rotate(-270deg);
+  -webkit-transition-delay: 0.075s;
+          transition-delay: 0.075s;
+}
+
+html {
+  height: 100%;
+}
+
 body {
   background: #ff7fb0;
+  height: 100%;
 }
 
 header {
+  height: 100%;
+}
+
+.global-header {
   background: #ffffff;
   width: 100%;
   display: -webkit-box;
@@ -19,97 +140,89 @@ header {
   color: #1454ec;
 }
 
-header .logo-link {
-  margin: 25px auto 25px 12px;
+.global-header .logo-link {
+  margin: 5px 10px;
+}
+
+@media only screen and (min-width: 768px) {
+  .global-header .logo-link {
+    margin: 10px auto;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .global-header .logo-link {
+    margin: 25px auto;
+  }
 }
 
 @media only screen and (min-width: 1332px) {
-  header .logo-link {
+  .global-header .logo-link {
     margin: 25px auto 25px 56px;
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  header .logo-link {
-    margin: 25px auto 25px 25px;
-  }
-}
-
-header .logo-link img {
+.global-header .logo-link img {
   max-width: 100px;
 }
 
 @media only screen and (min-width: 1024px) {
-  header .logo-link img {
+  .global-header .logo-link img {
     max-width: 150px;
   }
 }
 
-header a.icon {
+.global-header a.icon {
   width: 20%;
   color: #f34b3d;
-  font-size: 26px;
-  margin: auto 5px auto auto;
+  font-size: 36px;
+  margin: auto 4px;
+  text-decoration: none;
 }
 
 @media only screen and (min-width: 768px) {
-  header a.icon {
+  .global-header a.icon {
     margin: auto 5px auto auto;
+    font-size: 26px;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  header a.icon {
+  .global-header a.icon {
     margin: auto 15px auto auto;
   }
 }
 
 @media only screen and (min-width: 1332px) {
-  header a.icon {
+  .global-header a.icon {
     margin: auto 30px auto auto;
   }
 }
 
-header .header-right {
+.global-header .header-right {
   margin: auto 12px auto auto;
 }
 
+@media only screen and (min-width: 768px) {
+  .global-header .header-right {
+    margin: auto;
+  }
+}
+
 @media only screen and (min-width: 1332px) {
-  header .header-right {
+  .global-header .header-right {
     margin: auto 56px auto auto;
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  header .header-right {
-    margin: auto 25px auto auto;
-  }
-}
-
-header .header-right .mobile-nav {
-  margin: auto 5px auto auto;
-}
-
 @media only screen and (min-width: 768px) {
-  header .header-right .mobile-nav {
+  .global-header .header-right .mobile-nav {
     margin: auto 5px auto auto;
     display: none;
   }
 }
 
-@media only screen and (min-width: 1024px) {
-  header .header-right .mobile-nav {
-    margin: auto 15px auto auto;
-  }
-}
-
-@media only screen and (min-width: 1332px) {
-  header .header-right .mobile-nav {
-    margin: auto 30px auto auto;
-  }
-}
-
-header nav.header-nav {
+.global-header nav.header-nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -117,41 +230,41 @@ header nav.header-nav {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: auto auto 50px;
+  margin: auto;
   position: absolute;
   top: 0;
   left: -800px;
 }
 
 @media only screen and (min-width: 768px) {
-  header nav.header-nav {
+  .global-header nav.header-nav {
     position: static;
   }
 }
 
-header nav.header-nav .primary-nav {
+.global-header nav.header-nav .primary-nav {
   font-size: 16px;
   padding: 0;
 }
 
 @media only screen and (min-width: 1024px) {
-  header nav.header-nav .primary-nav {
+  .global-header nav.header-nav .primary-nav {
     font-size: 18px;
   }
 }
 
-header nav.header-nav .secondary-nav {
+.global-header nav.header-nav .secondary-nav {
   font-size: 14px;
   padding: 0;
 }
 
 @media only screen and (min-width: 1024px) {
-  header nav.header-nav .secondary-nav {
+  .global-header nav.header-nav .secondary-nav {
     font-size: 15px;
   }
 }
 
-header nav.header-nav ul {
+.global-header nav.header-nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -166,7 +279,7 @@ header nav.header-nav ul {
   margin: 0;
 }
 
-header nav.header-nav ul li {
+.global-header nav.header-nav ul li {
   text-decoration: none;
   margin: 5px 5px 5px 0;
   -webkit-text-decoration-color: #44ffd1;
@@ -174,23 +287,114 @@ header nav.header-nav ul li {
 }
 
 @media only screen and (min-width: 1332px) {
-  header nav.header-nav ul li {
+  .global-header nav.header-nav ul li {
     margin: 5px 50px 5px 0;
   }
 }
 
 @media only screen and (min-width: 1024px) {
-  header nav.header-nav ul li {
+  .global-header nav.header-nav ul li {
     margin: 5px 25px 5px 0;
   }
 }
 
-header nav.header-nav ul li:hover, header nav.header-nav ul li:active {
+.global-header nav.header-nav ul li:hover, .global-header nav.header-nav ul li:active {
   background: white;
   background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(50%, white), color-stop(51%, #44ffd1), color-stop(71%, #44ffd1), color-stop(100%, #44ffd1));
   background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(50%, white), color-stop(51%, #44ffd1), color-stop(71%, #44ffd1), to(#44ffd1));
   background: linear-gradient(to bottom, white 0%, white 50%, #44ffd1 51%, #44ffd1 71%, #44ffd1 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#44ffd1', GradientType=0 );
+}
+
+.mobile-header {
+  height: 100%;
+}
+
+.mobile-header nav.mobile.header-nav {
+  position: absolute;
+  top: 0;
+  left: -800px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  background-color: #ffffff;
+  opacity: 0.9;
+  height: 100%;
+}
+
+.mobile-header nav.mobile.header-nav a.btn.btn-book {
+  display: inherit;
+  margin: 10px auto;
+  width: 94%;
+  padding: 14px 0;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  .mobile-header nav.mobile.header-nav {
+    display: none;
+  }
+}
+
+.mobile-header nav.mobile.header-nav.show {
+  position: static;
+}
+
+.mobile-header nav.mobile.header-nav.show ul {
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  list-style: none;
+  width: 100%;
+  color: #1454ec;
+  list-style-position: inside;
+  font-family: "Oswald regular";
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.mobile-header nav.mobile.header-nav.show ul li {
+  text-align: center;
+  width: 94%;
+}
+
+.mobile-header nav.mobile.header-nav.show ul.primary-nav {
+  margin: 40px 0 0 0;
+  font-size: 26px;
+}
+
+.mobile-header nav.mobile.header-nav.show ul.primary-nav li {
+  background: white;
+  background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(61%, white), color-stop(62%, #44ffd1), color-stop(78%, #44ffd1), color-stop(79%, #44ffd1), color-stop(80%, white), color-stop(100%, white));
+  background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(61%, white), color-stop(62%, #44ffd1), color-stop(78%, #44ffd1), color-stop(79%, #44ffd1), color-stop(80%, white), to(white));
+  background: linear-gradient(to bottom, white 0%, white 61%, #44ffd1 62%, #44ffd1 78%, #44ffd1 79%, white 80%, white 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
+  margin: 10px auto;
+}
+
+.mobile-header nav.mobile.header-nav.show ul.primary-nav li:nth-child(1) {
+  background: #ffffff;
+}
+
+.mobile-header nav.mobile.header-nav.show ul.secondary-nav {
+  font-size: 21px;
+}
+
+.mobile-header nav.mobile.header-nav.show ul.secondary-nav li {
+  background: #ffffff;
+  margin: 0;
 }
 
 .btn.btn-book {
