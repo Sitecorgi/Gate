@@ -5,7 +5,6 @@ var mobileMenu = (function () {
         var hamburger = document.querySelector('.hamburger');
         var mobileNav = document.querySelector('.mobile-header-nav');
 
-        console.log(mobileNav);
         if(!hamburger.classList.contains('is-active')){
             hamburger.classList.add('is-active');
             mobileNav.classList.add('show');
