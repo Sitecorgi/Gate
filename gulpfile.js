@@ -6,6 +6,7 @@ var gulp = require('gulp'),
     plumber = require('gulp-plumber'),
     rename = require('gulp-rename'),
     minify = require('gulp-clean-css'),
+    minifyJs = require('gulp-uglify'),
     sourcemaps = require('gulp-sourcemaps');
 
     var displayError = function(error) {
@@ -61,6 +62,16 @@ var gulp = require('gulp'),
             .pipe(rename('main.min.css'))
             .pipe(gulp.dest('styles'));
       });
+
+      gulp.task('min-js', function(){
+        return gulp.src('scripts/*.js')
+            .pipe(plumber({errorHandler: onError}))
+            .pipe(sourcemaps.init())
+            .pipe(minifyJs())
+            .pipe(sourcemaps.write())
+            .pipe(rename("app.js"))
+            .pipe(gulp.dest('dist'))
+      })
 
       gulp.task('watch', function() {
         gulp.watch('sass/partials/*.scss', ['styles']);

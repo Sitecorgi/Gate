@@ -310,7 +310,7 @@ header {
   height: 100%;
 }
 
-.mobile-header nav.mobile.header-nav {
+.mobile-header nav.mobile-header-nav {
   position: absolute;
   top: 0;
   left: -800px;
@@ -327,7 +327,7 @@ header {
   height: 100%;
 }
 
-.mobile-header nav.mobile.header-nav a.btn.btn-book {
+.mobile-header nav.mobile-header-nav a.btn.btn-book {
   display: inherit;
   margin: 10px auto;
   width: 94%;
@@ -336,16 +336,16 @@ header {
 }
 
 @media only screen and (min-width: 768px) {
-  .mobile-header nav.mobile.header-nav {
+  .mobile-header nav.mobile-header-nav {
     display: none;
   }
 }
 
-.mobile-header nav.mobile.header-nav.show {
+.mobile-header nav.mobile-header-nav.show {
   position: static;
 }
 
-.mobile-header nav.mobile.header-nav.show ul {
+.mobile-header nav.mobile-header-nav.show ul {
   padding: 0;
   margin: 0;
   display: -webkit-box;
@@ -365,17 +365,17 @@ header {
           align-items: center;
 }
 
-.mobile-header nav.mobile.header-nav.show ul li {
+.mobile-header nav.mobile-header-nav.show ul li {
   text-align: center;
   width: 94%;
 }
 
-.mobile-header nav.mobile.header-nav.show ul.primary-nav {
+.mobile-header nav.mobile-header-nav.show ul.primary-nav {
   margin: 40px 0 0 0;
   font-size: 26px;
 }
 
-.mobile-header nav.mobile.header-nav.show ul.primary-nav li {
+.mobile-header nav.mobile-header-nav.show ul.primary-nav li {
   background: white;
   background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(61%, white), color-stop(62%, #44ffd1), color-stop(78%, #44ffd1), color-stop(79%, #44ffd1), color-stop(80%, white), color-stop(100%, white));
   background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(61%, white), color-stop(62%, #44ffd1), color-stop(78%, #44ffd1), color-stop(79%, #44ffd1), color-stop(80%, white), to(white));
@@ -384,15 +384,15 @@ header {
   margin: 10px auto;
 }
 
-.mobile-header nav.mobile.header-nav.show ul.primary-nav li:nth-child(1) {
+.mobile-header nav.mobile-header-nav.show ul.primary-nav li:nth-child(1) {
   background: #ffffff;
 }
 
-.mobile-header nav.mobile.header-nav.show ul.secondary-nav {
+.mobile-header nav.mobile-header-nav.show ul.secondary-nav {
   font-size: 21px;
 }
 
-.mobile-header nav.mobile.header-nav.show ul.secondary-nav li {
+.mobile-header nav.mobile-header-nav.show ul.secondary-nav li {
   background: #ffffff;
   margin: 0;
 }

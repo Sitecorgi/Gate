@@ -3,36 +3,21 @@
 <head>
     <title>Gate Theatre Header</title>
 
-    <meta
-        name="viewport"
-        content="width=device-width"
-    ></meta>
+    <meta name="viewport" content="width=device-width"></meta>
 
-    <link
-        rel="stylesheet"
-        href="styles/main.css"
-    ></link>
+    <link rel="stylesheet" href="styles/main.css"></link>
 
-    <link
-        rel="stylesheet"
-        href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
         integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-        crossorigin="anonymous"
-    ></link>
+        crossorigin="anonymous">
+    </link>
 </head>
 
 <body>
     <header>
         <div class="global-header">
-            <a
-                href="#"
-                class="logo-link"
-            >
-                <img
-                    src="img/header.png"
-                    class="logo"
-                    alt="Gate Theatre"
-                >
+            <a href="#" class="logo-link">
+                <img src="img/header.png" class="logo" alt="Gate Theatre">
             </a>
 
             <nav class="header-nav">
@@ -64,36 +49,26 @@
             </nav>
 
             <div class="header-right">
-                <a
-                    href="#"
-                    class="icon"
-                >
+                <a href="#" class="icon">
                     <i class="fa fa-user"></i>
                 </a>
 
-                <a
-                    href="#"
-                    class="icon"
-                >
+                <a href="#" class="icon">
                     <i class="fa fa-shopping-cart"></i>
                 </a>
 
-                <button class="hamburger hamburger--elastic mobile-nav" type="button">
+                <button class="hamburger hamburger--elastic mobile-nav" type="button" onclick="mobileMenu.toggleMenu()">
                         <span class="hamburger-box">
                           <span class="hamburger-inner"></span>
                         </span>
                       </button>
 
-                <a
-                    href="#"
-                    title="Book Now"
-                    class="btn btn-book btn-header"
-                >BOOK NOW</a>
+                <a href="#" title="Book Now" class="btn btn-book btn-header">BOOK NOW</a>
             </div>
         </div>
 
         <div class="mobile-header">
-            <nav class="mobile header-nav">
+            <nav class="mobile-header-nav">
                 <ul class="primary-nav">
                     <li>What's On</li>
                         <ul class="secondary-nav">
@@ -119,14 +94,12 @@
                 </ul>
 
                 <div>
-                        <a
-                        href="#"
-                        title="Book Now"
-                        class="btn btn-book btn-header"
-                    >BOOK NOW</a>
+                    <a href="#" title="Book Now" class="btn btn-book btn-header">BOOK NOW</a>
                 </div>
             </nav>         
         </div>
     </header>
+
+    <script src="dist/app.js" defer ></script>
 </body>
 </html>
